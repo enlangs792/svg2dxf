@@ -54,6 +54,13 @@ jobs:
       - name: Build executable with Nuitka
         shell: bash
         run: |
+          cat > build_entry.py <<'PY'
+          from svg2dxf.cli import main
+
+          if __name__ == "__main__":
+              raise SystemExit(main())
+          PY
+
           python -m nuitka \
             --onefile \
             --standalone \
@@ -61,7 +68,7 @@ jobs:
             --assume-yes-for-downloads \
             --output-dir=build \
             --output-filename=${{ matrix.binary_name }} \
-            src/svg2dxf/cli.py
+            build_entry.py
 
       - name: Package artifact (non-Windows)
         if: runner.os != 'Windows'
