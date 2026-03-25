@@ -21,7 +21,7 @@ jobs:
             target_name: linux-x64
             binary_name: svg2dxf
             asset_name: svg2dxf-linux-x64
-          - os: macos-13
+          - os: macos-latest
             target_name: macos-x64
             binary_name: svg2dxf
             asset_name: svg2dxf-macos-x64
