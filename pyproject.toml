@@ -1,0 +1,18 @@
+[project]
+name = "svg2dxf"
+version = "0.1.0"
+description = "Convert SVG files to DXF using svgpathtools + ezdxf."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "ezdxf>=1.4.2",
+  "svgpathtools>=1.6.1",
+]
+
+[project.scripts]
+svg2dxf = "svg2dxf.cli:main"
+
+[build-system]
+requires = ["hatchling>=1.25.0"]
+build-backend = "hatchling.build"
+
